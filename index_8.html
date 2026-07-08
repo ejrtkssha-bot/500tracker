@@ -1,0 +1,1130 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>3대500 트래커</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="3대500">
+<meta name="theme-color" content="#111213">
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
+<link rel="icon" href="data:image/png;base64,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">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+  :root{
+    --bg:#111213;
+    --surface:#1b1c1e;
+    --surface2:#232426;
+    --line:#2e2f32;
+    --text:#eceae6;
+    --muted:#8d8f93;
+    --gold:#d9a441;
+    --gold-dim:#8a6d33;
+    --steel:#5b8bb0;
+    --iron:#7d7f83;
+    --press:#a86bd0;
+    --good:#6fae7f;
+    --bad:#c26a5a;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;padding-bottom:60px;}
+  h1,h2,h3{font-family:'Oswald',sans-serif;font-weight:600;letter-spacing:.02em;margin:0;}
+  .num{font-family:'JetBrains Mono',monospace;}
+
+  header.top{padding:22px 18px 14px;border-bottom:1px solid var(--line);background:var(--bg);}
+  .eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.18em;color:var(--gold);text-transform:uppercase;}
+  header.top h1{font-size:26px;margin-top:4px;}
+  .sub{color:var(--muted);font-size:13px;margin-top:2px;}
+
+  nav.tabs{display:flex;gap:2px;padding:0 12px;overflow-x:auto;border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--bg);z-index:19;}
+  nav.tabs button{background:none;border:none;color:var(--muted);font-family:'Oswald',sans-serif;font-size:14px;padding:12px 14px;cursor:pointer;white-space:nowrap;border-bottom:2px solid transparent;}
+  nav.tabs button.active{color:var(--text);border-bottom-color:var(--gold);}
+
+  main{padding:16px;max-width:720px;margin:0 auto;}
+  .view{display:none;}
+  .view.active{display:block;}
+
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;margin-bottom:14px;}
+  .card h2{font-size:16px;color:var(--text);margin-bottom:12px;}
+  .card h2 .tag{color:var(--muted);font-size:11px;font-family:'JetBrains Mono',monospace;margin-left:8px;letter-spacing:.05em;}
+
+  /* dashboard */
+  .dash-total{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;}
+  .dash-total .big{font-family:'Oswald',sans-serif;font-size:44px;color:var(--gold);}
+  .dash-total .of{color:var(--muted);font-size:16px;}
+  .progress-track{height:10px;background:var(--surface2);border-radius:6px;overflow:hidden;margin:12px 0 6px;border:1px solid var(--line);}
+  .progress-fill{height:100%;background:linear-gradient(90deg,var(--gold-dim),var(--gold));border-radius:6px;transition:width .4s;}
+  .progress-label{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);font-family:'JetBrains Mono',monospace;}
+
+  .barbell{margin-top:16px;}
+  .barbell svg{width:100%;height:auto;display:block;}
+
+  .lift-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:14px;}
+  .lift-box{background:var(--surface2);border-radius:10px;padding:10px 12px;border-left:3px solid var(--iron);}
+  .lift-box.squat{border-left-color:var(--gold);}
+  .lift-box.bench{border-left-color:var(--steel);}
+  .lift-box.deadlift{border-left-color:var(--good);}
+  .lift-box.press{border-left-color:var(--press);}
+  .lift-box .name{font-size:11px;color:var(--muted);font-family:'JetBrains Mono',monospace;letter-spacing:.06em;text-transform:uppercase;}
+  .lift-box .val{font-family:'Oswald',sans-serif;font-size:22px;margin-top:2px;}
+  .lift-box .target{font-size:11px;color:var(--muted);margin-top:2px;}
+
+  label{display:block;font-size:12px;color:var(--muted);margin-bottom:4px;font-family:'JetBrains Mono',monospace;letter-spacing:.03em;}
+  input,select{width:100%;background:var(--surface2);border:1px solid var(--line);color:var(--text);border-radius:8px;padding:9px 10px;font-size:14px;font-family:'Inter',sans-serif;}
+  input:focus,select:focus{outline:none;border-color:var(--gold-dim);}
+  .field{margin-bottom:10px;}
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+  .row3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;}
+  .row5{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;}
+
+  button.btn{background:var(--gold);color:#1a1305;border:none;border-radius:8px;padding:10px 16px;font-family:'Oswald',sans-serif;font-size:14px;font-weight:600;cursor:pointer;letter-spacing:.02em;}
+  button.btn.secondary{background:var(--surface2);color:var(--text);border:1px solid var(--line);}
+  button.btn.danger{background:var(--bad);color:#1a0f0c;}
+  button.btn:active{transform:translateY(1px);}
+  .btn-row{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap;}
+
+  .achievable{margin-top:10px;padding:10px;background:var(--surface2);border-radius:8px;font-size:13px;}
+  .achievable .kg{font-family:'Oswald',sans-serif;color:var(--gold);font-size:20px;}
+  .plates-vis{display:flex;gap:4px;margin-top:8px;flex-wrap:wrap;align-items:flex-end;}
+  .plate-chip{font-family:'JetBrains Mono',monospace;font-size:11px;background:var(--surface);border:1px solid var(--line);border-radius:5px;padding:3px 7px;color:var(--iron);}
+
+  table{width:100%;border-collapse:collapse;font-size:13px;}
+  th,td{padding:8px 6px;text-align:left;border-bottom:1px solid var(--line);}
+  th{color:var(--muted);font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.05em;}
+  td.num{font-family:'JetBrains Mono',monospace;}
+  .del-btn{background:none;border:none;color:var(--bad);cursor:pointer;font-size:16px;}
+  .empty{color:var(--muted);font-size:13px;text-align:center;padding:24px 0;}
+
+  .chart-wrap{position:relative;height:200px;margin-top:6px;}
+  .chip-row{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px;}
+  .chip{font-size:11px;font-family:'JetBrains Mono',monospace;padding:4px 9px;border-radius:20px;border:1px solid var(--line);color:var(--muted);}
+  .chip.ok{border-color:var(--good);color:var(--good);}
+  .chip.low{border-color:var(--bad);color:var(--bad);}
+
+  .zone-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;}
+  .zone-box{background:var(--surface2);border-radius:10px;padding:10px 12px;}
+  .zone-box .zn{font-size:11px;color:var(--muted);font-family:'JetBrains Mono',monospace;text-transform:uppercase;}
+  .zone-box .zv{font-family:'Oswald',sans-serif;font-size:20px;margin-top:2px;}
+  .zone-box .zd{font-size:11px;color:var(--muted);margin-top:2px;}
+  .phase-pill{display:inline-block;padding:3px 10px;border-radius:20px;font-size:11px;font-family:'JetBrains Mono',monospace;margin-left:6px;}
+
+  .set-row{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:9px 0;border-bottom:1px solid var(--line);}
+  .set-row:last-child{border-bottom:none;}
+  .set-row .setLabel{font-size:13px;color:var(--muted);width:56px;flex-shrink:0;}
+  .set-row .setWeight{font-family:'Oswald',sans-serif;font-size:15px;flex:1;}
+  .set-row input.setRepsInput{width:64px;text-align:center;flex-shrink:0;}
+
+  .week-row{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;}
+  .day-chip{background:var(--surface2);border-radius:8px;padding:8px 4px;text-align:center;border:1px solid var(--line);}
+  .day-chip.today{border-color:var(--gold);}
+  .day-chip .dname{font-size:11px;color:var(--muted);font-family:'JetBrains Mono',monospace;}
+  .day-chip .dlifts{font-size:11px;margin-top:4px;line-height:1.5;min-height:28px;}
+  .day-chip .dlifts span{display:block;}
+  .day-chip.rest .dlifts{color:var(--muted);}
+  .day-schedule-row{display:flex;align-items:center;gap:8px;padding:8px 0;border-bottom:1px solid var(--line);}
+  .day-schedule-row:last-child{border-bottom:none;}
+  .day-schedule-row .dlabel{width:34px;font-size:12px;color:var(--muted);font-family:'JetBrains Mono',monospace;flex-shrink:0;}
+  .day-schedule-row .dchecks{display:flex;gap:10px;flex-wrap:wrap;font-size:12px;}
+  .day-schedule-row label{display:flex;align-items:center;gap:4px;color:var(--text);font-size:12px;margin:0;}
+  .day-schedule-row input[type=checkbox]{width:auto;}
+
+  .pace-lift{margin-bottom:16px;}
+  .pace-lift:last-child{margin-bottom:0;}
+  .pace-lift-label{display:flex;justify-content:space-between;align-items:baseline;font-size:12px;margin-bottom:5px;}
+  .pace-lift-label .pname{font-family:'Oswald',sans-serif;font-size:13px;color:var(--text);}
+  .pace-lift-label .pval{font-family:'JetBrains Mono',monospace;font-size:12px;}
+  .pace-track{position:relative;height:16px;background:var(--surface2);border-radius:8px;overflow:visible;}
+  .pace-band{position:absolute;top:0;bottom:0;background:rgba(141,143,147,.28);border-radius:4px;}
+  .pace-bar{position:absolute;top:0;bottom:0;left:0;border-radius:8px;transition:width .5s;}
+  .pace-band-label{position:absolute;top:20px;font-size:10px;color:var(--muted);font-family:'JetBrains Mono',monospace;white-space:nowrap;transform:translateX(-50%);}
+  .pace-legend{display:flex;gap:14px;flex-wrap:wrap;margin-top:22px;font-size:11px;color:var(--muted);font-family:'JetBrains Mono',monospace;}
+  .pace-legend span{display:inline-flex;align-items:center;gap:5px;}
+  .pace-legend i{width:9px;height:9px;border-radius:50%;display:inline-block;}
+
+  .toast{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);background:var(--gold);color:#1a1305;padding:10px 18px;border-radius:20px;font-family:'Oswald',sans-serif;font-size:13px;opacity:0;pointer-events:none;transition:opacity .25s, transform .25s;z-index:50;}
+  .toast.show{opacity:1;transform:translateX(-50%) translateY(-4px);}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="eyebrow">STRENGTH LOG</div>
+  <h1>3대500 프로젝트</h1>
+  <div class="sub" id="headerSub">체중 84kg · 목표 3대 500kg</div>
+</header>
+
+<nav class="tabs">
+  <button data-tab="home" class="active" onclick="switchTab('home')">홈</button>
+  <button data-tab="today" onclick="switchTab('today')">오늘 기록</button>
+  <button data-tab="stats" onclick="switchTab('stats')">통계</button>
+  <button data-tab="log" onclick="switchTab('log')">전체 기록</button>
+  <button data-tab="setup" onclick="switchTab('setup')">설정</button>
+</nav>
+
+<main>
+
+  <!-- HOME -->
+  <section class="view active" id="view-home">
+    <div class="card">
+      <h2>3대 합산 <span class="tag">SQUAT + BENCH + DEADLIFT</span></h2>
+      <div class="dash-total">
+        <span class="big num" id="homeTotal">342</span>
+        <span class="of">/ <span id="homeGoal">500</span> kg</span>
+      </div>
+      <div class="progress-track"><div class="progress-fill" id="homeProgressFill" style="width:0%"></div></div>
+      <div class="progress-label"><span id="homeProgressPct">0%</span><span id="homeRemain">남은 158kg</span></div>
+
+      <div class="barbell" id="barbellVis"></div>
+
+      <div class="lift-grid">
+        <div class="lift-box squat"><div class="name">스쿼트</div><div class="val num" id="homeSquat">114</div><div class="target">목표 <span id="tgtSquat">180</span>kg</div></div>
+        <div class="lift-box bench"><div class="name">벤치프레스</div><div class="val num" id="homeBench">94</div><div class="target">목표 <span id="tgtBench">120</span>kg</div></div>
+        <div class="lift-box deadlift"><div class="name">데드리프트</div><div class="val num" id="homeDeadlift">134</div><div class="target">목표 <span id="tgtDeadlift">200</span>kg</div></div>
+        <div class="lift-box press"><div class="name">밀리터리프레스</div><div class="val num" id="homePress">54</div><div class="target">3대 합산에는 미포함</div></div>
+      </div>
+    </div>
+
+    <div class="card" id="paceCard">
+      <h2>목표 달성률 <span class="tag">종목별 진행 상황</span></h2>
+      <div id="paceViz"></div>
+      <div class="sub" id="paceEta" style="margin-top:8px;">-</div>
+    </div>
+
+    <div class="card" id="zoneCard">
+      <h2>이번 주 훈련 존 <span class="tag" id="zonePhaseTag">블록 주기화</span></h2>
+      <div class="sub" id="zoneWeekInfo">-</div>
+      <div class="zone-grid" id="zoneGrid"></div>
+      <div class="sub" style="margin-top:10px;">3주 진행(축적→강화) + 1주 디로드 구조. 2사이클(8주)마다 강화기가 '피크/테스트 주'로 바뀌어서 실제 1RM을 시도해요. %는 각 종목 현재 1RM 기준, 원판 조합으로 가장 가까운 세팅 무게로 반올림했어요.</div>
+    </div>
+
+    <div class="card" id="scheduleCard">
+      <h2>이번 주 스케줄</h2>
+      <div class="week-row" id="weekRow"></div>
+      <div class="btn-row"><button class="btn secondary" onclick="regenerateSchedule()">🎲 새 스케줄 뽑기</button></div>
+    </div>
+
+    <div class="card" id="freqCard">
+      <h2>이번 주 훈련 빈도 <span class="tag">권장 종목당 주 2회</span></h2>
+      <div class="chip-row" id="freqChips"></div>
+    </div>
+
+    <div class="card">
+      <h2>RPE 참고표 <span class="tag">RTS 방식</span></h2>
+      <div class="sub" style="margin-bottom:8px;">RPE = 세트 종료 후 "몇 개 더 할 수 있었는가"의 역산 (RPE 10 = 0개 남음, RPE 8 = 2개 남음)</div>
+      <table id="rpeTable"></table>
+    </div>
+  </section>
+
+  <!-- TODAY -->
+  <section class="view" id="view-today">
+    <div class="card" id="workoutCard">
+      <h2>오늘의 운동 <span class="tag" id="workoutPhaseTag">-</span></h2>
+      <div class="chip-row" id="todayScheduleChips"></div>
+      <div class="field">
+        <label>종목</label>
+        <select id="workoutLift" onchange="renderWorkoutCard()">
+          <option value="squat">스쿼트</option>
+          <option value="bench">벤치프레스</option>
+          <option value="deadlift">데드리프트</option>
+          <option value="press">밀리터리프레스</option>
+        </select>
+      </div>
+      <div class="sub" id="workoutTarget">-</div>
+      <div id="setRows"></div>
+      <div class="sub" style="margin-top:8px;">각 세트 실제로 한 횟수를 입력하고 완료를 눌러주세요. 목표 횟수를 전 세트 채우면 다음엔 자동으로 무게가 올라가요.</div>
+      <div class="btn-row">
+        <button class="btn" onclick="completeSession()">세션 완료 처리</button>
+      </div>
+      <div class="achievable" id="sessionFeedback" style="display:none;"></div>
+    </div>
+
+    <div class="card">
+      <h2>직접 기록 추가 <span class="tag">자유 입력</span></h2>
+      <div class="field">
+        <label>종목</label>
+        <select id="logLift">
+          <option value="squat">스쿼트</option>
+          <option value="bench">벤치프레스</option>
+          <option value="deadlift">데드리프트</option>
+          <option value="press">밀리터리프레스</option>
+        </select>
+      </div>
+      <div class="row3">
+        <div class="field"><label>무게(kg)</label><input type="number" id="logWeight" step="0.5" placeholder="예: 116"></div>
+        <div class="field"><label>횟수(회)</label><input type="number" id="logReps" step="1" value="1"></div>
+        <div class="field"><label>세트</label><input type="number" id="logSets" step="1" value="1"></div>
+      </div>
+      <div class="row2">
+        <div class="field"><label>RPE (체감 강도, 선택)</label><input type="number" id="logRpe" step="0.5" min="1" max="10" placeholder="예: 8"></div>
+        <div class="field"><label>날짜</label><input type="date" id="logDate"></div>
+      </div>
+      <div class="field"><label>메모 (선택)</label><input type="text" id="logNote" placeholder="컨디션, RPE 등"></div>
+
+      <div class="achievable" id="achievableBox">원판 세팅 가능 무게를 확인하려면 무게를 입력하세요.</div>
+      <div class="achievable" id="rpeFeedback" style="display:none;"></div>
+
+      <div class="btn-row">
+        <button class="btn" onclick="addLog()">기록 저장</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>원판 계산기 <span class="tag">한쪽 조합</span></h2>
+      <div class="field"><label>목표 무게(kg)</label><input type="number" id="calcTarget" step="0.5" placeholder="예: 120"></div>
+      <div class="achievable" id="calcBox">무게를 입력하면 가장 가까운 세팅 가능 무게와 원판 조합을 보여줘요.</div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="view" id="view-stats">
+    <div class="card">
+      <h2>3대 합산 추이 <span class="tag">목표선 500kg</span></h2>
+      <div class="chart-wrap"><canvas id="chartTotal"></canvas></div>
+    </div>
+    <div class="card">
+      <h2 style="color:var(--gold)">스쿼트</h2>
+      <div class="chart-wrap"><canvas id="chartSquat"></canvas></div>
+    </div>
+    <div class="card">
+      <h2 style="color:var(--steel)">벤치프레스</h2>
+      <div class="chart-wrap"><canvas id="chartBench"></canvas></div>
+    </div>
+    <div class="card">
+      <h2 style="color:var(--good)">데드리프트</h2>
+      <div class="chart-wrap"><canvas id="chartDeadlift"></canvas></div>
+    </div>
+    <div class="card">
+      <h2 style="color:var(--press)">밀리터리프레스 <span class="tag">별도 통계</span></h2>
+      <div class="chart-wrap"><canvas id="chartPress"></canvas></div>
+    </div>
+  </section>
+
+  <!-- LOG -->
+  <section class="view" id="view-log">
+    <div class="card">
+      <h2>전체 기록</h2>
+      <table id="logTable">
+        <thead><tr><th>날짜</th><th>종목</th><th>무게</th><th>횟수×세트</th><th>RPE</th><th>추정1RM</th><th></th></tr></thead>
+        <tbody id="logTbody"></tbody>
+      </table>
+      <div class="empty" id="logEmpty" style="display:none;">아직 기록이 없어요. '오늘 기록' 탭에서 첫 세션을 남겨보세요.</div>
+    </div>
+  </section>
+
+  <!-- SETUP -->
+  <section class="view" id="view-setup">
+    <div class="card">
+      <h2>현재 기록 (kg)</h2>
+      <div class="row2">
+        <div class="field"><label>스쿼트</label><input type="number" id="cfgSquat" step="0.5"></div>
+        <div class="field"><label>벤치프레스</label><input type="number" id="cfgBench" step="0.5"></div>
+      </div>
+      <div class="row2">
+        <div class="field"><label>데드리프트</label><input type="number" id="cfgDeadlift" step="0.5"></div>
+        <div class="field"><label>밀리터리프레스</label><input type="number" id="cfgPress" step="0.5"></div>
+      </div>
+      <div class="field"><label>체중(kg)</label><input type="number" id="cfgBodyweight" step="0.5"></div>
+    </div>
+
+    <div class="card">
+      <h2>목표</h2>
+      <div class="row2">
+        <div class="field"><label>3대 합산 목표(kg)</label><input type="number" id="cfgGoal" step="1"></div>
+        <div class="field"><label>목표 기간(개월)</label><input type="number" id="cfgMonths" step="1"></div>
+      </div>
+      <div class="row3">
+        <div class="field"><label>스쿼트 목표</label><input type="number" id="cfgTgtSquat" step="1"></div>
+        <div class="field"><label>벤치 목표</label><input type="number" id="cfgTgtBench" step="1"></div>
+        <div class="field"><label>데드리프트 목표</label><input type="number" id="cfgTgtDeadlift" step="1"></div>
+      </div>
+      <div class="sub">세 목표의 합이 3대 합산 목표와 같아야 정확히 맞아떨어져요. (지금 기본값: 180+120+200=500)</div>
+      <div class="row2" style="margin-top:10px;">
+        <div class="field"><label>프로그램 시작일</label><input type="date" id="cfgProgramStart"></div>
+        <div class="field"><label>주기화 사이클 길이(주)</label><input type="number" id="cfgCycleWeeks" step="1" min="2"></div>
+      </div>
+      <div class="sub">기본값: 4주 사이클 (1~2주 축적기 → 3주차 강화기 → 4주차 디로드). 홈 탭 '이번 주 훈련 존'에 반영돼요.</div>
+    </div>
+
+    <div class="card">
+      <h2>주간 스케줄</h2>
+      <div class="sub" style="margin-bottom:8px;">버튼을 누르면 스쿼트·데드리프트는 같은 날에 안 겹치게, 종목당 주 2회, 연속 훈련일 최대 2일로 랜덤 배정해요. 마음에 안 들면 다시 눌러서 새로 뽑거나, 아래에서 직접 손봐도 돼요.</div>
+      <div class="btn-row"><button class="btn" onclick="regenerateSchedule()">🎲 자동으로 새 스케줄 짜기</button></div>
+      <div id="scheduleEditor" style="margin-top:12px;"></div>
+    </div>
+
+    <div class="card">
+      <h2>바벨 / 원판</h2>
+      <div class="field"><label>바 무게(kg)</label><input type="number" id="cfgBar" step="0.5"></div>
+      <label style="margin-top:6px;">보유 원판 (kg : 개수, 양쪽 합)</label>
+      <div class="row5" id="plateInputs"></div>
+    </div>
+
+    <div class="card">
+      <h2>데이터</h2>
+      <div class="btn-row">
+        <button class="btn secondary" onclick="saveSetup(true)">설정 저장</button>
+        <button class="btn secondary" onclick="exportData()">내보내기 (JSON)</button>
+        <button class="btn secondary" onclick="document.getElementById('importFile').click()">가져오기</button>
+        <button class="btn danger" onclick="resetAll()">전체 초기화</button>
+      </div>
+      <input type="file" id="importFile" accept="application/json" style="display:none" onchange="importData(event)">
+    </div>
+  </section>
+
+</main>
+
+<div class="toast" id="toast"></div>
+
+<script>
+const LS_SETUP = '3dae500_setup_v1';
+const LS_LOGS = '3dae500_logs_v1';
+
+const DEFAULT_SETUP = {
+  bodyweight: 84,
+  bar: 14,
+  plates: {20:6, 10:4, 5:6, 2.5:6, 1:2},
+  current: {squat:114, bench:94, deadlift:134, press:54},
+  goal: 500,
+  targets: {squat:180, bench:120, deadlift:200},
+  months: 18,
+  programStart: new Date().toISOString().slice(0,10),
+  cycleWeeks: 4,
+  bumps: {squat:0, bench:0, deadlift:0, press:0},
+  bumpState: {squat:'', bench:'', deadlift:'', press:''},
+  // 요일별 훈련 종목 배정. 키는 JS Date.getDay() 기준 (0=일 ~ 6=토)
+  schedule: {
+    0: [],
+    1: ['deadlift','bench'],
+    2: ['press','squat'],
+    3: [],
+    4: ['deadlift','bench'],
+    5: ['press','squat'],
+    6: []
+  }
+};
+
+// 블록 주기화: 3주 진행(축적→강화) + 1주 디로드. 각 phase는 현재 1RM 대비 %를 제시.
+// 근거: 주기화 훈련이 비주기화 대비 근력 향상에 유리(메타분석, ES≈0.31),
+// 3~6주 블록 구조(축적 65-75% → 강화 80-87% → 디로드)가 중급자에게 흔히 권장되는 모델.
+const ZONES = {
+  accumulation: {label:'축적기', pct:0.72, reps:'6-8', sets:'3-4', rpe:'7-8'},
+  intensification: {label:'강화기', pct:0.85, reps:'3-5', sets:'3-5', rpe:'8-9'},
+  peak: {label:'피크/테스트', pct:0.97, reps:'1', sets:'1-2', rpe:'9-10'},
+  deload: {label:'디로드', pct:0.58, reps:'5', sets:'2', rpe:'5-6'}
+};
+
+const RPE_TABLE = [
+  {rpe:'10', r1:'100%', r3:'92%', r5:'87%', r8:'78%'},
+  {rpe:'9', r1:'96%', r3:'89%', r5:'84%', r8:'75%'},
+  {rpe:'8', r1:'92%', r3:'86%', r5:'81%', r8:'72%'},
+  {rpe:'7', r1:'89%', r3:'83%', r5:'78%', r8:'69%'},
+  {rpe:'6', r1:'86%', r3:'80%', r5:'75%', r8:'66%'}
+];
+
+let setup = loadSetup();
+let logs = loadLogs();
+let charts = {};
+
+function loadSetup(){
+  try{ const raw = localStorage.getItem(LS_SETUP); if(!raw) return structuredClone(DEFAULT_SETUP);
+    return Object.assign(structuredClone(DEFAULT_SETUP), JSON.parse(raw)); }
+  catch(e){ return structuredClone(DEFAULT_SETUP); }
+}
+function loadLogs(){
+  try{ const raw = localStorage.getItem(LS_LOGS); return raw ? JSON.parse(raw) : []; }
+  catch(e){ return []; }
+}
+function persistSetup(){ localStorage.setItem(LS_SETUP, JSON.stringify(setup)); }
+function persistLogs(){ localStorage.setItem(LS_LOGS, JSON.stringify(logs)); }
+
+function toast(msg){
+  const t = document.getElementById('toast');
+  t.textContent = msg; t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'), 1600);
+}
+
+/* ---------- tabs ---------- */
+function switchTab(name){
+  document.querySelectorAll('nav.tabs button').forEach(b=>b.classList.toggle('active', b.dataset.tab===name));
+  document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));
+  document.getElementById('view-'+name).classList.add('active');
+  if(name==='stats') renderCharts();
+  if(name==='home') renderHome();
+  if(name==='today'){ autoSelectTodayLift(); renderWorkoutCard(); renderTodayScheduleChips(); }
+  if(name==='log') renderLogTable();
+  if(name==='setup') fillSetupForm();
+}
+
+/* ---------- plate math ---------- */
+function sidePlateCounts(plates){
+  // per-side max count = floor(total/2)
+  const out = {};
+  Object.keys(plates).forEach(k=>{ out[parseFloat(k)] = Math.floor((plates[k]||0)/2); });
+  return out;
+}
+function achievableSideSums(plates){
+  const side = sidePlateCounts(plates);
+  const denoms = Object.keys(side).map(parseFloat).sort((a,b)=>b-a);
+  let sums = new Set([0]);
+  denoms.forEach(d=>{
+    const cnt = side[d];
+    const prev = Array.from(sums);
+    for(let c=1;c<=cnt;c++){
+      prev.forEach(s=> sums.add(+(s + d*c).toFixed(2)) );
+    }
+  });
+  return Array.from(sums).sort((a,b)=>a-b);
+}
+function achievableWeights(bar, plates){
+  return achievableSideSums(plates).map(s=>+(bar + 2*s).toFixed(2));
+}
+function nearestAchievable(target, weights){
+  if(!weights.length) return null;
+  let best = weights[0], diff = Math.abs(target-best);
+  weights.forEach(w=>{ const d=Math.abs(target-w); if(d<diff){diff=d;best=w;} });
+  return best;
+}
+function sideBreakdown(sideSum, plates){
+  const side = sidePlateCounts(plates);
+  const denoms = Object.keys(side).map(parseFloat).sort((a,b)=>b-a);
+  let remain = sideSum;
+  const used = [];
+  denoms.forEach(d=>{
+    let cnt = side[d];
+    while(remain >= d - 0.001 && cnt > 0){
+      used.push(d); remain = +(remain-d).toFixed(2); cnt--;
+    }
+  });
+  return used;
+}
+
+function renderAchievableBox(targetEl, boxEl){
+  const target = parseFloat(targetEl.value);
+  if(!target || target<=0){ boxEl.textContent = '무게를 입력하면 세팅 가능 무게를 보여줘요.'; return; }
+  const weights = achievableWeights(setup.bar, setup.plates);
+  const near = nearestAchievable(target, weights);
+  const sideSum = (near - setup.bar)/2;
+  const combo = sideBreakdown(sideSum, setup.plates);
+  const comboHtml = combo.length
+    ? combo.map(p=>`<span class="plate-chip">${p}kg</span>`).join('')
+    : '<span class="plate-chip">원판 없음 (바 무게만)</span>';
+  boxEl.innerHTML = `가장 가까운 세팅: <span class="kg">${near}kg</span> (요청 ${target}kg)
+    <div class="sub" style="margin-top:4px;">바 ${setup.bar}kg + 한쪽 ${sideSum}kg × 2</div>
+    <div class="plates-vis">${comboHtml}</div>`;
+}
+
+/* ---------- 1RM & lift stats ---------- */
+function est1RM(weight, reps){
+  reps = reps || 1;
+  if(reps <= 1) return weight;
+  return +(weight * (1 + reps/30)).toFixed(1);
+}
+function currentMax(lift){
+  const base = setup.current[lift] || 0;
+  const fromLogs = logs.filter(l=>l.lift===lift).reduce((m,l)=>Math.max(m, est1RM(l.weight,l.reps)), 0);
+  return Math.max(base, fromLogs);
+}
+function currentTotal(){
+  return currentMax('squat') + currentMax('bench') + currentMax('deadlift');
+}
+
+/* ---------- home ---------- */
+function renderHome(){
+  const total = currentTotal();
+  const goal = setup.goal;
+  document.getElementById('homeTotal').textContent = total.toFixed(1).replace(/\.0$/,'');
+  document.getElementById('homeGoal').textContent = goal;
+  const pct = Math.min(100, Math.max(0, (total/goal)*100));
+  document.getElementById('homeProgressFill').style.width = pct.toFixed(1)+'%';
+  document.getElementById('homeProgressPct').textContent = pct.toFixed(1)+'%';
+  document.getElementById('homeRemain').textContent = `남은 ${(goal-total).toFixed(1)}kg`;
+
+  document.getElementById('homeSquat').textContent = currentMax('squat');
+  document.getElementById('homeBench').textContent = currentMax('bench');
+  document.getElementById('homeDeadlift').textContent = currentMax('deadlift');
+  document.getElementById('homePress').textContent = currentMax('press');
+  document.getElementById('tgtSquat').textContent = setup.targets.squat;
+  document.getElementById('tgtBench').textContent = setup.targets.bench;
+  document.getElementById('tgtDeadlift').textContent = setup.targets.deadlift;
+
+  document.getElementById('headerSub').textContent = `체중 ${setup.bodyweight}kg · 목표 3대 ${goal}kg`;
+
+  renderBarbell(pct);
+  renderPace();
+  renderZone();
+  renderFreq();
+  renderWeekSchedule();
+}
+
+function renderBarbell(pct){
+  // simple barbell: sleeve fills with plates proportional to pct, gold accent
+  const filled = Math.round(pct/10); // 0-10 segments
+  let plates = '';
+  const segW = 26, gap=3, startX = 70;
+  for(let i=0;i<10;i++){
+    const x = startX + i*(segW+gap);
+    const filledSeg = i < filled;
+    plates += `<rect x="${x}" y="14" width="${segW}" height="72" rx="3"
+      fill="${filledSeg ? 'url(#goldGrad)' : '#2a2b2d'}" stroke="#3a3b3d" stroke-width="1"/>`;
+  }
+  const svg = `<svg viewBox="0 0 380 100" xmlns="http://www.w3.org/2000/svg">
+    <defs><linearGradient id="goldGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e8c15e"/><stop offset="100%" stop-color="#a97f2d"/>
+    </linearGradient></defs>
+    <rect x="0" y="42" width="60" height="16" rx="4" fill="#3a3b3d"/>
+    ${plates}
+    <rect x="${startX + 10*(segW+gap)}" y="42" width="30" height="16" rx="4" fill="#3a3b3d"/>
+  </svg>`;
+  document.getElementById('barbellVis').innerHTML = svg;
+}
+
+function renderPace(){
+  const lifts = {
+    squat: {label:'스쿼트', color:'var(--gold)'},
+    bench: {label:'벤치', color:'var(--steel)'},
+    deadlift: {label:'데드리프트', color:'var(--good)'}
+  };
+  const viz = document.getElementById('paceViz');
+  viz.innerHTML = Object.entries(lifts).map(([k,info])=>{
+    const cur = currentMax(k);
+    const target = setup.targets[k] || 1;
+    const pct = Math.min(100, (cur/target)*100);
+    return `<div class="pace-lift">
+      <div class="pace-lift-label">
+        <span class="pname">${info.label}</span>
+        <span class="pval num">${cur}kg / ${target}kg · <span style="color:${info.color}">${pct.toFixed(0)}%</span></span>
+      </div>
+      <div class="pace-track">
+        <div class="pace-bar" style="width:${pct}%;background:${info.color};"></div>
+      </div>
+    </div>`;
+  }).join('');
+
+  const diffs = {
+    squat: setup.targets.squat - setup.current.squat,
+    bench: setup.targets.bench - setup.current.bench,
+    deadlift: setup.targets.deadlift - setup.current.deadlift
+  };
+  const today = new Date();
+  const eta = new Date(today.getTime() + setup.months*30.44*86400000);
+  document.getElementById('paceEta').textContent =
+    `${setup.months}개월 계획 · 목표일 약 ${eta.getFullYear()}.${String(eta.getMonth()+1).padStart(2,'0')} · 총 ${(diffs.squat+diffs.bench+diffs.deadlift).toFixed(0)}kg 증량 필요`;
+}
+
+/* ---------- block periodization ---------- */
+function getCycleInfo(){
+  const start = new Date(setup.programStart || DEFAULT_SETUP.programStart);
+  const today = new Date();
+  const weeksSince = Math.max(0, Math.floor((today - start) / (7*86400000)));
+  const cw = Math.max(2, setup.cycleWeeks || 4);
+  const weekInCycle = weeksSince % cw; // 0-indexed
+  const mesoIndex = Math.floor(weeksSince / cw); // 몇 번째 사이클인지 (0부터)
+  let phaseKey;
+  if(weekInCycle === cw - 1) phaseKey = 'deload';
+  else if(weekInCycle === cw - 2) phaseKey = (mesoIndex % 2 === 1) ? 'peak' : 'intensification';
+  else phaseKey = 'accumulation';
+  return {weekNumber: weeksSince+1, weekInCycle: weekInCycle+1, cycleWeeks: cw, mesoIndex, phaseKey, phase: ZONES[phaseKey]};
+}
+function renderZone(){
+  const info = getCycleInfo();
+  document.getElementById('zonePhaseTag').textContent = `${info.phase.label} · ${info.weekInCycle}/${info.cycleWeeks}주차`;
+  document.getElementById('zoneWeekInfo').textContent =
+    `${info.phase.label} — ${info.phase.reps}회 × ${info.phase.sets}세트 @ RPE ${info.phase.rpe} (약 ${(info.phase.pct*100).toFixed(0)}% 1RM)`;
+
+  const weights = achievableWeights(setup.bar, setup.plates);
+  const liftNames = {squat:'스쿼트', bench:'벤치프레스', deadlift:'데드리프트', press:'밀리터리프레스'};
+  const grid = document.getElementById('zoneGrid');
+  grid.innerHTML = Object.keys(liftNames).map(k=>{
+    const max = currentMax(k);
+    const raw = max * info.phase.pct;
+    const near = nearestAchievable(raw, weights);
+    const recent = logs.filter(l=>l.lift===k && l.rpe!=null).sort((a,b)=>b.date.localeCompare(a.date))[0];
+    const sugg = recent ? rpeSuggestion(k, recent.rpe) : null;
+    const fbHtml = sugg ? `<div class="zd" style="color:${sugg.cls==='ok'?'var(--good)':'var(--bad)'};margin-top:4px;">최근 RPE ${recent.rpe} → ${sugg.cls==='ok' ? '유지/진행' : '무게 조정 권장'}</div>` : '';
+    return `<div class="zone-box"><div class="zn">${liftNames[k]}</div>
+      <div class="zv num">${near}kg</div>
+      <div class="zd">1RM ${max}kg의 ${(info.phase.pct*100).toFixed(0)}%</div>${fbHtml}</div>`;
+  }).join('');
+}
+function renderFreq(){
+  const since = Date.now() - 7*86400000;
+  const liftNames = {squat:'스쿼트', bench:'벤치', deadlift:'데드리프트', press:'밀프'};
+  const chipsEl = document.getElementById('freqChips');
+  chipsEl.innerHTML = Object.keys(liftNames).map(k=>{
+    const cnt = logs.filter(l=> l.lift===k && new Date(l.date).getTime() >= since).length;
+    const cls = cnt >= 2 ? 'ok' : 'low';
+    return `<span class="chip ${cls}">${liftNames[k]} 이번주 ${cnt}회</span>`;
+  }).join('');
+}
+function renderRpeTable(){
+  const tbl = document.getElementById('rpeTable');
+  if(!tbl) return;
+  tbl.innerHTML = `<thead><tr><th>RPE</th><th>1회</th><th>3회</th><th>5회</th><th>8회</th></tr></thead>
+    <tbody>${RPE_TABLE.map(r=>`<tr><td class="num">${r.rpe}</td><td class="num">${r.r1}</td><td class="num">${r.r3}</td><td class="num">${r.r5}</td><td class="num">${r.r8}</td></tr>`).join('')}</tbody>`;
+}
+function maxConsecutiveCircular(daysArr){
+  // 스케줄은 매주 반복되므로 토(6)→일(0)로 넘어가는 것도 연속으로 취급해야 함
+  const flags = new Array(7).fill(false);
+  daysArr.forEach(d=>flags[d]=true);
+  const doubled = flags.concat(flags);
+  let run=0, maxRun=0;
+  for(let i=0;i<14;i++){
+    if(doubled[i]){ run++; maxRun=Math.max(maxRun, run); }
+    else run=0;
+  }
+  return Math.min(maxRun, 7);
+}
+function randomTrainingDaySet(){
+  const combos = [];
+  (function comb(start, chosen){
+    if(chosen.length===4){ combos.push(chosen.slice()); return; }
+    for(let i=start;i<7;i++){ chosen.push(i); comb(i+1, chosen); chosen.pop(); }
+  })(0, []);
+  const valid = combos.filter(c => maxConsecutiveCircular(c) <= 2);
+  return valid[Math.floor(Math.random()*valid.length)];
+}
+function randomPairingTemplate(){
+  // 스쿼트-데드리프트가 같은 날에 절대 안 겹치는 3가지 유효 조합 중 랜덤 선택
+  const templates = [
+    [['squat','bench'],['deadlift','press'],['squat','bench'],['deadlift','press']],
+    [['squat','press'],['deadlift','bench'],['squat','press'],['deadlift','bench']],
+    [['squat','bench'],['bench','deadlift'],['deadlift','press'],['press','squat']]
+  ];
+  const t = templates[Math.floor(Math.random()*templates.length)].map(p=>p.slice());
+  for(let i=t.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [t[i],t[j]]=[t[j],t[i]]; }
+  return t;
+}
+function generateSchedule(){
+  const trainDays = randomTrainingDaySet().slice().sort((a,b)=>a-b);
+  const pairs = randomPairingTemplate();
+  const schedule = {0:[],1:[],2:[],3:[],4:[],5:[],6:[]};
+  trainDays.forEach((d,i)=>{ schedule[d] = pairs[i]; });
+  return schedule;
+}
+function regenerateSchedule(){
+  setup.schedule = generateSchedule();
+  persistSetup();
+  renderScheduleEditor();
+  renderWeekSchedule();
+  renderTodayScheduleChips();
+  toast('새 스케줄이 나왔어요');
+}
+
+const DAY_NAMES = ['일','월','화','수','목','금','토'];
+const LIFT_ABBR = {squat:'스쿼트', bench:'벤치', deadlift:'데드', press:'밀프'};
+
+function renderWeekSchedule(){
+  const row = document.getElementById('weekRow');
+  if(!row) return;
+  const todayIdx = new Date().getDay();
+  let html = '';
+  for(let d=0; d<7; d++){
+    const lifts = (setup.schedule && setup.schedule[d]) || [];
+    const isRest = lifts.length===0;
+    html += `<div class="day-chip ${d===todayIdx?'today':''} ${isRest?'rest':''}">
+      <div class="dname">${DAY_NAMES[d]}</div>
+      <div class="dlifts">${isRest ? '휴식' : lifts.map(l=>`<span>${LIFT_ABBR[l]}</span>`).join('')}</div>
+    </div>`;
+  }
+  row.innerHTML = html;
+}
+
+function renderScheduleEditor(){
+  const el = document.getElementById('scheduleEditor');
+  if(!el) return;
+  const liftOpts = [['squat','스쿼트'],['bench','벤치'],['deadlift','데드리프트'],['press','밀프']];
+  let html = '';
+  for(let d=0; d<7; d++){
+    const sel = (setup.schedule && setup.schedule[d]) || [];
+    html += `<div class="day-schedule-row">
+      <span class="dlabel">${DAY_NAMES[d]}</span>
+      <span class="dchecks">${liftOpts.map(([k,label])=>
+        `<label><input type="checkbox" class="schedChk" data-day="${d}" data-lift="${k}" ${sel.includes(k)?'checked':''}>${label}</label>`
+      ).join('')}</span>
+    </div>`;
+  }
+  el.innerHTML = html;
+}
+
+function renderTodayScheduleChips(){
+  const chipsEl = document.getElementById('todayScheduleChips');
+  if(!chipsEl) return;
+  const todayIdx = new Date().getDay();
+  const todays = (setup.schedule && setup.schedule[todayIdx]) || [];
+  if(!todays.length){
+    chipsEl.innerHTML = `<span class="chip low">오늘은 휴식일로 설정돼 있어요. 그래도 기록하려면 아래에서 종목을 직접 골라주세요.</span>`;
+  } else {
+    chipsEl.innerHTML = todays.map(l=>`<span class="chip ok" style="cursor:pointer" onclick="selectWorkoutLift('${l}')">오늘 예정: ${LIFT_ABBR[l]}</span>`).join('');
+  }
+}
+function selectWorkoutLift(lift){
+  document.getElementById('workoutLift').value = lift;
+  renderWorkoutCard();
+}
+function autoSelectTodayLift(){
+  const todayIdx = new Date().getDay();
+  const todays = (setup.schedule && setup.schedule[todayIdx]) || [];
+  if(todays.length>0) document.getElementById('workoutLift').value = todays[0];
+}
+
+function targetSetsReps(phaseKey){
+  return {
+    accumulation: {sets:4, reps:7},
+    intensification: {sets:4, reps:4},
+    peak: {sets:1, reps:1},
+    deload: {sets:2, reps:5}
+  }[phaseKey];
+}
+
+function renderWorkoutCard(){
+  const liftSel = document.getElementById('workoutLift');
+  if(!liftSel) return;
+  const lift = liftSel.value;
+  const info = getCycleInfo();
+  const sr = targetSetsReps(info.phaseKey);
+
+  if(!setup.bumps) setup.bumps = structuredClone(DEFAULT_SETUP.bumps);
+  if(!setup.bumpState) setup.bumpState = structuredClone(DEFAULT_SETUP.bumpState);
+  const stateKey = `${info.mesoIndex}-${info.phaseKey}`;
+  if(setup.bumpState[lift] !== stateKey){
+    setup.bumps[lift] = 0;
+    setup.bumpState[lift] = stateKey;
+    persistSetup();
+  }
+
+  const max = currentMax(lift);
+  const baseline = max * info.phase.pct + (setup.bumps[lift]||0);
+  const weights = achievableWeights(setup.bar, setup.plates);
+  const near = nearestAchievable(baseline, weights);
+
+  const liftNames = {squat:'스쿼트', bench:'벤치프레스', deadlift:'데드리프트', press:'밀리터리프레스'};
+  document.getElementById('workoutPhaseTag').textContent = `${info.phase.label} · ${info.weekInCycle}/${info.cycleWeeks}주차`;
+  document.getElementById('workoutTarget').textContent =
+    `${liftNames[lift]} — ${near}kg × ${sr.reps}회 × ${sr.sets}세트 (목표 RPE ${info.phase.rpe})`
+    + (info.phaseKey==='peak' ? ' · 이 무게로 몸 풀고 실제 최고 시도는 아래 직접 기록에 남기세요' : '');
+
+  const rows = document.getElementById('setRows');
+  let html = '';
+  for(let i=1;i<=sr.sets;i++){
+    html += `<div class="set-row">
+      <span class="setLabel">세트 ${i}</span>
+      <span class="setWeight num">${near}kg</span>
+      <input type="number" class="setRepsInput" value="${sr.reps}" min="0" step="1">
+    </div>`;
+  }
+  rows.innerHTML = html;
+  rows.dataset.lift = lift;
+  rows.dataset.weight = near;
+  rows.dataset.targetReps = sr.reps;
+  rows.dataset.phaseKey = info.phaseKey;
+}
+
+function completeSession(){
+  const rows = document.getElementById('setRows');
+  const lift = rows.dataset.lift;
+  const weight = parseFloat(rows.dataset.weight);
+  const targetReps = parseInt(rows.dataset.targetReps);
+  const phaseKey = rows.dataset.phaseKey;
+  const inputs = Array.from(document.querySelectorAll('.setRepsInput'));
+  if(!inputs.length || !lift) return;
+  const date = new Date().toISOString().slice(0,10);
+
+  const repsArr = inputs.map(inp => parseInt(inp.value)||0);
+  const allMet = repsArr.every(r => r >= targetReps);
+  const bestReps = Math.max(...repsArr);
+
+  // 세션 하나 = 기록 하나. 세트별 상세는 메모에 남기고, 대표값은 최고 세트 기준으로 e1RM 계산
+  logs.push({
+    id: Date.now()+Math.random(),
+    lift, weight, reps: bestReps, sets: repsArr.length, rpe: null, date,
+    note: `오늘의 운동 · 세트별 ${repsArr.join(',')}회`
+  });
+  logs.sort((a,b)=> a.date.localeCompare(b.date));
+  persistLogs();
+
+  const fb = document.getElementById('sessionFeedback');
+  fb.style.display = 'block';
+  if(phaseKey === 'deload'){
+    fb.innerHTML = `<div class="kg" style="font-size:14px;color:var(--good)">디로드 세션 기록 완료! 다음 사이클을 위해 잘 쉬세요.</div>`;
+  } else if(allMet){
+    const weights = achievableWeights(setup.bar, setup.plates);
+    const idx = weights.indexOf(weight);
+    const next = (idx>=0 && idx<weights.length-1) ? weights[idx+1] : +(weight+2).toFixed(1);
+    setup.bumps[lift] = (setup.bumps[lift]||0) + (next - weight);
+    persistSetup();
+    fb.innerHTML = `<div class="kg" style="font-size:14px;color:var(--good)">🎉 전 세트 목표 달성! 다음 세션엔 ${next}kg으로 올라가요.</div>`;
+  } else {
+    fb.innerHTML = `<div class="kg" style="font-size:14px;color:var(--bad)">일부 세트가 목표 횟수를 못 채웠어요. 다음에도 ${weight}kg으로 재도전하세요.</div>`;
+  }
+  toast('세션 기록 완료');
+  renderHome();
+  renderWorkoutCard();
+}
+
+function parseRpeRange(rangeStr){
+  const parts = rangeStr.split('-').map(parseFloat);
+  return parts.length===2 ? parts : [parts[0], parts[0]];
+}
+function rpeSuggestion(lift, loggedRpe){
+  if(loggedRpe==null || isNaN(loggedRpe)) return null;
+  const info = getCycleInfo();
+  const [lo, hi] = parseRpeRange(info.phase.rpe);
+  let msg, cls;
+  if(loggedRpe <= lo - 1){
+    msg = `RPE ${loggedRpe} — 목표(${info.phase.rpe})보다 가벼웠어요. 다음 세션엔 무게를 올려도 좋아요.`;
+    cls = 'ok';
+  } else if(loggedRpe >= hi + 1){
+    msg = `RPE ${loggedRpe} — 목표(${info.phase.rpe})보다 힘들었어요. 다음 세션은 무게를 유지하거나 살짝 낮추세요.`;
+    cls = 'low';
+  } else {
+    msg = `RPE ${loggedRpe} — 이번 phase 목표(${info.phase.rpe}) 범위 안이에요. 계획대로 진행하면 돼요.`;
+    cls = 'ok';
+  }
+  return {msg, cls};
+}
+
+function addLog(){
+  const lift = document.getElementById('logLift').value;
+  const weight = parseFloat(document.getElementById('logWeight').value);
+  const reps = parseInt(document.getElementById('logReps').value)||1;
+  const sets = parseInt(document.getElementById('logSets').value)||1;
+  const rpeRaw = document.getElementById('logRpe').value;
+  const rpe = rpeRaw==='' ? null : parseFloat(rpeRaw);
+  const date = document.getElementById('logDate').value || new Date().toISOString().slice(0,10);
+  const note = document.getElementById('logNote').value.trim();
+  if(!weight || weight<=0){ toast('무게를 입력해주세요'); return; }
+  logs.push({id:Date.now(), lift, weight, reps, sets, rpe, date, note});
+  logs.sort((a,b)=> a.date.localeCompare(b.date));
+  persistLogs();
+
+  const fb = document.getElementById('rpeFeedback');
+  const sugg = rpeSuggestion(lift, rpe);
+  if(sugg){
+    fb.style.display = 'block';
+    fb.innerHTML = `<div class="kg" style="font-size:14px;color:${sugg.cls==='ok' ? 'var(--good)':'var(--bad)'}">${sugg.msg}</div>`;
+  } else {
+    fb.style.display = 'none';
+  }
+
+  document.getElementById('logWeight').value='';
+  document.getElementById('logRpe').value='';
+  document.getElementById('logNote').value='';
+  toast('기록 저장됨');
+  renderHome();
+}
+function deleteLog(id){
+  logs = logs.filter(l=>l.id!==id);
+  persistLogs();
+  renderLogTable();
+  renderHome();
+}
+function renderLogTable(){
+  const tbody = document.getElementById('logTbody');
+  const empty = document.getElementById('logEmpty');
+  if(!logs.length){ tbody.innerHTML=''; empty.style.display='block'; return; }
+  empty.style.display='none';
+  const liftName = {squat:'스쿼트',bench:'벤치',deadlift:'데드리프트',press:'밀프'};
+  tbody.innerHTML = logs.slice().reverse().map(l=>`
+    <tr>
+      <td>${l.date}</td>
+      <td>${liftName[l.lift]}</td>
+      <td class="num">${l.weight}kg</td>
+      <td class="num">${l.reps}×${l.sets}</td>
+      <td class="num">${l.rpe!=null ? l.rpe : '-'}</td>
+      <td class="num">${est1RM(l.weight,l.reps)}kg</td>
+      <td><button class="del-btn" onclick="deleteLog(${l.id})">✕</button></td>
+    </tr>`).join('');
+}
+
+/* ---------- charts ---------- */
+function seriesFor(lift){
+  const pts = logs.filter(l=>l.lift===lift).map(l=>({x:l.date, y:est1RM(l.weight,l.reps)}));
+  pts.sort((a,b)=>a.x.localeCompare(b.x));
+  return pts;
+}
+function baseChartOpts(color, extra){
+  const {labels, ...datasetExtra} = extra;
+  return {
+    type:'line',
+    data:{ labels: labels || [], datasets:[Object.assign({
+      borderColor:color, backgroundColor:color+'33', tension:.25,
+      pointRadius:3, pointBackgroundColor:color, fill:true
+    }, datasetExtra)] },
+    options:{
+      responsive:true, maintainAspectRatio:false,
+      scales:{
+        x:{ticks:{color:'#8d8f93', font:{size:10}, maxRotation:45, minRotation:0}, grid:{color:'#2e2f32'}},
+        y:{ticks:{color:'#8d8f93', font:{size:10}}, grid:{color:'#2e2f32'}}
+      },
+      plugins:{legend:{display:false}}
+    }
+  };
+}
+function renderCharts(){
+  Object.values(charts).forEach(c=>c.destroy());
+  charts = {};
+
+  const total = buildTotalSeries(); // {labels, data}
+  charts.total = new Chart(document.getElementById('chartTotal'), {
+    type:'line',
+    data:{
+      labels: total.labels,
+      datasets:[
+        {label:'3대 합산', data:total.data, borderColor:'#d9a441', backgroundColor:'#d9a44133', tension:.25, pointRadius:3, fill:true},
+        {label:'목표', data: total.labels.map(()=>setup.goal), borderColor:'#8d8f93', borderDash:[6,4], pointRadius:0, fill:false}
+      ]
+    },
+    options:{
+      responsive:true, maintainAspectRatio:false,
+      scales:{
+        x:{ticks:{color:'#8d8f93', font:{size:10}, maxRotation:45, minRotation:0}, grid:{color:'#2e2f32'}},
+        y:{ticks:{color:'#8d8f93', font:{size:10}}, grid:{color:'#2e2f32'}}
+      },
+      plugins:{legend:{labels:{color:'#8d8f93', font:{size:10}}}}
+    }
+  });
+
+  const sq = withStart('squat'), be = withStart('bench'), dl = withStart('deadlift'), pr = withStart('press');
+  charts.squat = new Chart(document.getElementById('chartSquat'), baseChartOpts('#d9a441', {label:'스쿼트', data: sq.data, labels: sq.labels}));
+  charts.bench = new Chart(document.getElementById('chartBench'), baseChartOpts('#5b8bb0', {label:'벤치', data: be.data, labels: be.labels}));
+  charts.deadlift = new Chart(document.getElementById('chartDeadlift'), baseChartOpts('#6fae7f', {label:'데드리프트', data: dl.data, labels: dl.labels}));
+  charts.press = new Chart(document.getElementById('chartPress'), baseChartOpts('#a86bd0', {label:'밀리터리프레스', data: pr.data, labels: pr.labels}));
+}
+function withStart(lift){
+  const pts = seriesFor(lift);
+  const startDate = pts.length ? pts[0].x : new Date().toISOString().slice(0,10);
+  const anchorDate = new Date(new Date(startDate).getTime() - 7*86400000).toISOString().slice(0,10);
+  const full = [{x:anchorDate, y:setup.current[lift]}, ...pts];
+  return { labels: full.map(p=>p.x), data: full.map(p=>p.y) };
+}
+function buildTotalSeries(){
+  // 기록 날짜별로 종목별 최고 e1RM을 누적 반영해서 3대 합산 추이를 만듦
+  const dates = Array.from(new Set(logs.map(l=>l.date))).sort();
+  if(!dates.length){
+    const today = new Date().toISOString().slice(0,10);
+    return { labels:[today], data:[currentTotal()] };
+  }
+  let running = Object.assign({}, setup.current);
+  const data = dates.map(d=>{
+    logs.filter(l=>l.date===d).forEach(l=>{
+      running[l.lift] = Math.max(running[l.lift]||0, est1RM(l.weight,l.reps));
+    });
+    return running.squat+running.bench+running.deadlift;
+  });
+  return { labels: dates, data };
+}
+
+/* ---------- setup form ---------- */
+function fillSetupForm(){
+  document.getElementById('cfgSquat').value = setup.current.squat;
+  document.getElementById('cfgBench').value = setup.current.bench;
+  document.getElementById('cfgDeadlift').value = setup.current.deadlift;
+  document.getElementById('cfgPress').value = setup.current.press;
+  document.getElementById('cfgBodyweight').value = setup.bodyweight;
+  document.getElementById('cfgGoal').value = setup.goal;
+  document.getElementById('cfgMonths').value = setup.months;
+  document.getElementById('cfgTgtSquat').value = setup.targets.squat;
+  document.getElementById('cfgTgtBench').value = setup.targets.bench;
+  document.getElementById('cfgTgtDeadlift').value = setup.targets.deadlift;
+  document.getElementById('cfgBar').value = setup.bar;
+  document.getElementById('cfgProgramStart').value = setup.programStart || DEFAULT_SETUP.programStart;
+  document.getElementById('cfgCycleWeeks').value = setup.cycleWeeks || 4;
+  renderScheduleEditor();
+
+  const plateBox = document.getElementById('plateInputs');
+  plateBox.innerHTML = '';
+  Object.keys(setup.plates).sort((a,b)=>b-a).forEach(k=>{
+    plateBox.innerHTML += `<div class="field"><label>${k}kg</label>
+      <input type="number" step="1" class="plateCount" data-w="${k}" value="${setup.plates[k]}"></div>`;
+  });
+}
+function saveSetup(showToast){
+  setup.current.squat = parseFloat(document.getElementById('cfgSquat').value)||0;
+  setup.current.bench = parseFloat(document.getElementById('cfgBench').value)||0;
+  setup.current.deadlift = parseFloat(document.getElementById('cfgDeadlift').value)||0;
+  setup.current.press = parseFloat(document.getElementById('cfgPress').value)||0;
+  setup.bodyweight = parseFloat(document.getElementById('cfgBodyweight').value)||0;
+  setup.goal = parseFloat(document.getElementById('cfgGoal').value)||500;
+  setup.months = parseFloat(document.getElementById('cfgMonths').value)||18;
+  setup.targets.squat = parseFloat(document.getElementById('cfgTgtSquat').value)||0;
+  setup.targets.bench = parseFloat(document.getElementById('cfgTgtBench').value)||0;
+  setup.targets.deadlift = parseFloat(document.getElementById('cfgTgtDeadlift').value)||0;
+  setup.bar = parseFloat(document.getElementById('cfgBar').value)||0;
+  setup.programStart = document.getElementById('cfgProgramStart').value || DEFAULT_SETUP.programStart;
+  setup.cycleWeeks = parseInt(document.getElementById('cfgCycleWeeks').value)||4;
+
+  const newPlates = {};
+  document.querySelectorAll('.plateCount').forEach(inp=>{
+    newPlates[parseFloat(inp.dataset.w)] = parseInt(inp.value)||0;
+  });
+  setup.plates = newPlates;
+
+  const newSchedule = {0:[],1:[],2:[],3:[],4:[],5:[],6:[]};
+  document.querySelectorAll('.schedChk').forEach(chk=>{
+    if(chk.checked){
+      const d = parseInt(chk.dataset.day);
+      newSchedule[d].push(chk.dataset.lift);
+    }
+  });
+  setup.schedule = newSchedule;
+
+  persistSetup();
+  if(showToast) toast('설정 저장됨');
+  renderHome();
+}
+
+/* ---------- data io ---------- */
+function exportData(){
+  const blob = new Blob([JSON.stringify({setup, logs}, null, 2)], {type:'application/json'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = '3dae500_backup_'+new Date().toISOString().slice(0,10)+'.json';
+  a.click();
+  URL.revokeObjectURL(url);
+}
+function importData(evt){
+  const file = evt.target.files[0];
+  if(!file) return;
+  const reader = new FileReader();
+  reader.onload = e=>{
+    try{
+      const data = JSON.parse(e.target.result);
+      if(data.setup) setup = Object.assign(structuredClone(DEFAULT_SETUP), data.setup);
+      if(data.logs) logs = data.logs;
+      persistSetup(); persistLogs();
+      fillSetupForm(); renderHome(); renderWorkoutCard(); renderTodayScheduleChips();
+      toast('가져오기 완료');
+    }catch(err){ toast('파일을 읽을 수 없어요'); }
+  };
+  reader.readAsText(file);
+}
+function resetAll(){
+  if(!confirm('모든 기록과 설정이 초기화돼요. 계속할까요?')) return;
+  localStorage.removeItem(LS_SETUP);
+  localStorage.removeItem(LS_LOGS);
+  setup = structuredClone(DEFAULT_SETUP);
+  logs = [];
+  fillSetupForm(); renderHome(); renderLogTable(); renderWorkoutCard(); renderTodayScheduleChips();
+  toast('초기화 완료');
+}
+
+/* ---------- init ---------- */
+document.getElementById('logDate').value = new Date().toISOString().slice(0,10);
+document.getElementById('logWeight').addEventListener('input', e=>renderAchievableBox(e.target, document.getElementById('achievableBox')));
+document.getElementById('calcTarget').addEventListener('input', e=>renderAchievableBox(e.target, document.getElementById('calcBox')));
+
+fillSetupForm();
+renderHome();
+renderLogTable();
+renderRpeTable();
+autoSelectTodayLift();
+renderWorkoutCard();
+renderTodayScheduleChips();
+</script>
+</body>
+</html>
