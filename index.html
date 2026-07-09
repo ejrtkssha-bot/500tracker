@@ -147,11 +147,21 @@
   .pace-legend i{width:9px;height:9px;border-radius:50%;display:inline-block;}
 
   .log-row:active{background:var(--surface2);}
-  .log-detail-row td{background:var(--surface2);padding:10px 6px;}
-  .set-chip-row{display:flex;gap:6px;flex-wrap:wrap;}
-  .set-chip{font-family:'JetBrains Mono',monospace;font-size:11px;padding:4px 9px;border-radius:20px;border:1px solid var(--line);}
+  .set-chip{font-family:'JetBrains Mono',monospace;font-size:10px;padding:3px 4px;border-radius:16px;border:1px solid var(--line);white-space:nowrap;flex:1 1 0;text-align:center;}
+  .set-chip-row{display:flex;gap:5px;}
   .set-chip.ok{color:var(--good);border-color:var(--good);}
   .set-chip.fail{color:var(--bad);border-color:var(--bad);}
+
+  .log-list{display:flex;flex-direction:column;gap:8px;}
+  .log-card{background:var(--surface2);border-radius:10px;padding:11px 12px;}
+  .log-card-top{display:flex;align-items:center;gap:8px;}
+  .log-card-top .log-date{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--muted);white-space:nowrap;}
+  .log-card-top .log-lift{font-family:'Oswald',sans-serif;font-size:14px;flex:1;min-width:0;}
+  .log-card-top .chevron{color:var(--muted);font-size:10px;}
+  .log-card-main{display:flex;justify-content:space-between;align-items:baseline;margin-top:7px;font-size:14px;flex-wrap:wrap;gap:4px;}
+  .log-card-main .e1rm{color:var(--gold);}
+  .log-card-sub{font-size:11px;color:var(--muted);margin-top:3px;}
+  .log-card .set-chip-row{margin-top:10px;padding-top:10px;border-top:1px solid var(--line);}
 
   .toast{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);background:var(--gold);color:#1a1305;padding:10px 18px;border-radius:20px;font-family:'Oswald',sans-serif;font-size:13px;opacity:0;pointer-events:none;transition:opacity .25s, transform .25s;z-index:50;}
   .toast.show{opacity:1;transform:translateX(-50%) translateY(-4px);}
@@ -315,10 +325,7 @@
   <section class="view" id="view-log">
     <div class="card">
       <h2>전체 기록</h2>
-      <table id="logTable">
-        <thead><tr><th>날짜</th><th>종목</th><th>무게</th><th>횟수×세트</th><th>RPE</th><th>추정1RM</th><th></th></tr></thead>
-        <tbody id="logTbody"></tbody>
-      </table>
+      <div class="log-list" id="logList"></div>
       <div class="empty" id="logEmpty" style="display:none;">아직 기록이 없어요. '오늘 기록' 탭에서 첫 세션을 남겨보세요.</div>
     </div>
   </section>
@@ -932,38 +939,39 @@ function deleteLog(id){
   renderHome();
 }
 function renderLogTable(){
-  const tbody = document.getElementById('logTbody');
+  const list = document.getElementById('logList');
   const empty = document.getElementById('logEmpty');
-  if(!logs.length){ tbody.innerHTML=''; empty.style.display='block'; return; }
+  if(!logs.length){ list.innerHTML=''; empty.style.display='block'; return; }
   empty.style.display='none';
-  const liftName = {squat:'스쿼트',bench:'벤치',deadlift:'데드리프트',press:'밀프'};
-  const rows = logs.slice().reverse().map(l=>{
+  const liftName = {squat:'스쿼트',bench:'벤치',deadlift:'데드리프트',press:'밀리터리프레스'};
+  const liftColor = {squat:'var(--gold)',bench:'var(--steel)',deadlift:'var(--good)',press:'var(--press)'};
+
+  list.innerHTML = logs.slice().reverse().map(l=>{
     const hasDetail = Array.isArray(l.setDetail) && l.setDetail.length>0;
-    const mainRow = `<tr class="log-row" ${hasDetail?`onclick="toggleLogDetail(${l.id})" style="cursor:pointer"`:''}>
-      <td>${l.date}${hasDetail?' <span style="color:var(--muted);font-size:10px;">▾</span>':''}</td>
-      <td>${liftName[l.lift]}</td>
-      <td class="num">${l.weight}kg</td>
-      <td class="num">${l.reps}×${l.sets}</td>
-      <td class="num">${l.rpe!=null ? l.rpe : '-'}</td>
-      <td class="num">${est1RM(l.weight,l.reps)}kg</td>
-      <td><button class="del-btn" onclick="event.stopPropagation();deleteLog(${l.id})">✕</button></td>
-    </tr>`;
-    if(!hasDetail) return mainRow;
-    const chips = l.setDetail.map((r,i)=>{
+    const chips = hasDetail ? l.setDetail.map((r,i)=>{
       const ok = r >= l.targetReps;
-      return `<span class="set-chip ${ok?'ok':'fail'}">세트${i+1} · ${r}회${ok?'':` (목표 ${l.targetReps})`}</span>`;
-    }).join('');
-    const detailRow = `<tr class="log-detail-row" id="detail-${l.id}" style="display:none;">
-      <td colspan="7"><div class="set-chip-row">${chips}</div></td>
-    </tr>`;
-    return mainRow + detailRow;
+      return `<span class="set-chip ${ok?'ok':'fail'}">${i+1}세트 ${r}회${ok?'':` (목표${l.targetReps})`}</span>`;
+    }).join('') : '';
+    return `<div class="log-card" ${hasDetail?`onclick="toggleLogDetail(${l.id})" style="cursor:pointer"`:''}>
+      <div class="log-card-top">
+        <span class="log-date">${l.date}</span>
+        <span class="log-lift" style="color:${liftColor[l.lift]}">${liftName[l.lift]}</span>
+        ${hasDetail?'<span class="chevron">▾</span>':''}
+        <button class="del-btn" onclick="event.stopPropagation();deleteLog(${l.id})">✕</button>
+      </div>
+      <div class="log-card-main">
+        <span class="num">${l.weight}kg × ${l.reps}회 × ${l.sets}세트</span>
+        <span class="num e1rm">e1RM ${est1RM(l.weight,l.reps)}kg</span>
+      </div>
+      <div class="log-card-sub">RPE ${l.rpe!=null ? l.rpe : '-'}</div>
+      ${hasDetail?`<div class="set-chip-row" id="detail-${l.id}" style="display:none;">${chips}</div>`:''}
+    </div>`;
   }).join('');
-  tbody.innerHTML = rows;
 }
 function toggleLogDetail(id){
   const row = document.getElementById('detail-'+id);
   if(!row) return;
-  row.style.display = (row.style.display === 'none') ? 'table-row' : 'none';
+  row.style.display = (row.style.display === 'none') ? 'flex' : 'none';
 }
 
 /* ---------- charts ---------- */
