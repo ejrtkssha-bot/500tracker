@@ -146,6 +146,13 @@
   .pace-legend span{display:inline-flex;align-items:center;gap:5px;}
   .pace-legend i{width:9px;height:9px;border-radius:50%;display:inline-block;}
 
+  .log-row:active{background:var(--surface2);}
+  .log-detail-row td{background:var(--surface2);padding:10px 6px;}
+  .set-chip-row{display:flex;gap:6px;flex-wrap:wrap;}
+  .set-chip{font-family:'JetBrains Mono',monospace;font-size:11px;padding:4px 9px;border-radius:20px;border:1px solid var(--line);}
+  .set-chip.ok{color:var(--good);border-color:var(--good);}
+  .set-chip.fail{color:var(--bad);border-color:var(--bad);}
+
   .toast{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);background:var(--gold);color:#1a1305;padding:10px 18px;border-radius:20px;font-family:'Oswald',sans-serif;font-size:13px;opacity:0;pointer-events:none;transition:opacity .25s, transform .25s;z-index:50;}
   .toast.show{opacity:1;transform:translateX(-50%) translateY(-4px);}
 </style>
@@ -842,6 +849,7 @@ function completeSession(){
   logs.push({
     id: Date.now()+Math.random(),
     lift, weight, reps: bestReps, sets: repsArr.length, rpe: null, date,
+    targetReps, setDetail: repsArr,
     note: `오늘의 운동 · 세트별 ${repsArr.join(',')}회`
   });
   logs.sort((a,b)=> a.date.localeCompare(b.date));
@@ -929,16 +937,33 @@ function renderLogTable(){
   if(!logs.length){ tbody.innerHTML=''; empty.style.display='block'; return; }
   empty.style.display='none';
   const liftName = {squat:'스쿼트',bench:'벤치',deadlift:'데드리프트',press:'밀프'};
-  tbody.innerHTML = logs.slice().reverse().map(l=>`
-    <tr>
-      <td>${l.date}</td>
+  const rows = logs.slice().reverse().map(l=>{
+    const hasDetail = Array.isArray(l.setDetail) && l.setDetail.length>0;
+    const mainRow = `<tr class="log-row" ${hasDetail?`onclick="toggleLogDetail(${l.id})" style="cursor:pointer"`:''}>
+      <td>${l.date}${hasDetail?' <span style="color:var(--muted);font-size:10px;">▾</span>':''}</td>
       <td>${liftName[l.lift]}</td>
       <td class="num">${l.weight}kg</td>
       <td class="num">${l.reps}×${l.sets}</td>
       <td class="num">${l.rpe!=null ? l.rpe : '-'}</td>
       <td class="num">${est1RM(l.weight,l.reps)}kg</td>
-      <td><button class="del-btn" onclick="deleteLog(${l.id})">✕</button></td>
-    </tr>`).join('');
+      <td><button class="del-btn" onclick="event.stopPropagation();deleteLog(${l.id})">✕</button></td>
+    </tr>`;
+    if(!hasDetail) return mainRow;
+    const chips = l.setDetail.map((r,i)=>{
+      const ok = r >= l.targetReps;
+      return `<span class="set-chip ${ok?'ok':'fail'}">세트${i+1} · ${r}회${ok?'':` (목표 ${l.targetReps})`}</span>`;
+    }).join('');
+    const detailRow = `<tr class="log-detail-row" id="detail-${l.id}" style="display:none;">
+      <td colspan="7"><div class="set-chip-row">${chips}</div></td>
+    </tr>`;
+    return mainRow + detailRow;
+  }).join('');
+  tbody.innerHTML = rows;
+}
+function toggleLogDetail(id){
+  const row = document.getElementById('detail-'+id);
+  if(!row) return;
+  row.style.display = (row.style.display === 'none') ? 'table-row' : 'none';
 }
 
 /* ---------- charts ---------- */
