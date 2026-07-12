@@ -147,8 +147,9 @@
   .pace-legend i{width:9px;height:9px;border-radius:50%;display:inline-block;}
 
   .log-row:active{background:var(--surface2);}
-  .set-chip{font-family:'JetBrains Mono',monospace;font-size:10px;padding:3px 4px;border-radius:16px;border:1px solid var(--line);white-space:nowrap;flex:1 1 0;text-align:center;}
-  .set-chip-row{display:flex;gap:5px;}
+  .set-chip{font-family:'JetBrains Mono',monospace;font-size:10px;padding:3px 7px;border-radius:16px;border:1px solid var(--line);white-space:nowrap;flex:0 0 auto;}
+  .set-chip-row{display:flex;gap:5px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;max-width:100%;}
+  .set-chip-row::-webkit-scrollbar{display:none;}
   .set-chip.ok{color:var(--good);border-color:var(--good);}
   .set-chip.fail{color:var(--bad);border-color:var(--bad);}
 
@@ -254,6 +255,10 @@
       <div class="sub" id="workoutTarget">-</div>
       <div id="setRows"></div>
       <div class="sub" style="margin-top:8px;">각 세트 실제로 한 횟수를 입력하고 완료를 눌러주세요. 목표 횟수를 전 세트 채우면 다음엔 자동으로 무게가 올라가요.</div>
+      <div class="field" style="margin-top:10px;">
+        <label>세션 RPE (체감 강도, 선택)</label>
+        <input type="number" id="sessionRpeInput" step="0.5" min="1" max="10" placeholder="예: 8.5 (10에 가까울수록 힘듦)">
+      </div>
       <div class="btn-row">
         <button class="btn" onclick="completeSession()">세션 완료 처리</button>
       </div>
@@ -852,10 +857,15 @@ function completeSession(){
   const allMet = repsArr.every(r => r >= targetReps);
   const bestReps = Math.max(...repsArr);
 
-  // 세션 하나 = 기록 하나. 세트별 상세는 메모에 남기고, 대표값은 최고 세트 기준으로 e1RM 계산
+  const rpeRaw = document.getElementById('sessionRpeInput').value;
+  const sessionRpe = rpeRaw==='' ? null : parseFloat(rpeRaw);
+  const info = getCycleInfo();
+  const [rpeLo, rpeHi] = parseRpeRange(info.phase.rpe);
+  const tooHard = sessionRpe!=null && sessionRpe > rpeHi + 1;
+
   logs.push({
     id: Date.now()+Math.random(),
-    lift, weight, reps: bestReps, sets: repsArr.length, rpe: null, date,
+    lift, weight, reps: bestReps, sets: repsArr.length, rpe: sessionRpe, date,
     targetReps, setDetail: repsArr,
     note: `오늘의 운동 · 세트별 ${repsArr.join(',')}회`
   });
@@ -866,16 +876,19 @@ function completeSession(){
   fb.style.display = 'block';
   if(phaseKey === 'deload'){
     fb.innerHTML = `<div class="kg" style="font-size:14px;color:var(--good)">디로드 세션 기록 완료! 다음 사이클을 위해 잘 쉬세요.</div>`;
-  } else if(allMet){
+  } else if(allMet && !tooHard){
     const weights = achievableWeights(setup.bar, setup.plates);
     const idx = weights.indexOf(weight);
     const next = (idx>=0 && idx<weights.length-1) ? weights[idx+1] : +(weight+2).toFixed(1);
     setup.bumps[lift] = (setup.bumps[lift]||0) + (next - weight);
     persistSetup();
     fb.innerHTML = `<div class="kg" style="font-size:14px;color:var(--good)">🎉 전 세트 목표 달성! 다음 세션엔 ${next}kg으로 올라가요.</div>`;
+  } else if(allMet && tooHard){
+    fb.innerHTML = `<div class="kg" style="font-size:14px;color:var(--bad)">횟수는 채웠지만 RPE ${sessionRpe}로 너무 힘들었어요 (목표 RPE ${info.phase.rpe}). 무게를 올리지 않고 ${weight}kg으로 다음에도 진행할게요. 계속 이러면 설정 탭에서 현재 기록을 낮춰 재조정하는 걸 추천해요.</div>`;
   } else {
     fb.innerHTML = `<div class="kg" style="font-size:14px;color:var(--bad)">일부 세트가 목표 횟수를 못 채웠어요. 다음에도 ${weight}kg으로 재도전하세요.</div>`;
   }
+  document.getElementById('sessionRpeInput').value = '';
   toast('세션 기록 완료');
   renderHome();
   renderWorkoutCard();
